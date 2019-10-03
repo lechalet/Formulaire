@@ -28,6 +28,7 @@ if (isset($_POST['isFormSubmitted'])) {
     {
         $emailError = '<br/>Erreur: le champ ne peut être vide';
     }
+    $emailError = filter_var($email, FILTER_VALIDATE_EMAIL);
     if (empty($_POST['tel']) === true)
     {
         $telError = '<br/>Erreur: le champ ne peut être vide et doit contenir 10 caractères';
